@@ -121,6 +121,77 @@ install.packages("devtools")
 [1] TRUE
 
 
+Data Analysis: Introduction
+___________________________________
+
+
+Data : Data are the values of qualitative and quantitative variables, belonging to a set of items
+
+Set of items: population
+
+Variables: measurement or characteristic of an item
+
+Data is often available in raw format, so we need to parse it properly
+
+Data may be a video or audio also!
+
+https://www.data.gov/: has a lot of data sets
+
+The most important thing in Data Science is the Question
+Data is the second most important thing
+often Data will limit or enable the Question
+
+Hadoopis an incredibly useful and powerful technique iff ur data is v v large
+But if we have a powerful computer we can analyze data locally
+
+figshare: share data here
+
+Alternative: https://github.com/jtleek/datasharing
+
+Study by Barack Obama:
+
+Question: Which text in a website invites donations more?
+
+Experiment:
+1. Randomly show visitors one version or the other
+2. Measure how much they donate
+3. Determine which is better
+
+Statistical Inference:
+
+population is all the people in US who might visit the website
+
+A small subset is selected based on some probability
+
+This results in a small sample
+Then we get Descriptive Statsistics (ave number of donations) on this sample
+
+Then we use Inferential Statsistics to decide whether the result will be same for entire population
+
+
+Correlation is not Causation:
+
+S and L may be directly correlated. But that does not mean that S causes L because an unknown factor A might be causing Loading
+
+So how to fix this?
+
+Randomization and Blocking:
+
+- we can fix a variable so that it does not interfere
+- stratify the var i.e use each one of them equally
+- randomize the var
+
+Prediction Key Quantities:
+
+Suppose there are 2 vars: Disease and Test
+
+for eg Disease=True and Test=True implies true positive
+
+Sensitivity: P(positive test | Disease)
+Specificity: P(negative test | no Disease)
+Positive Predictive Value: P(Disease | positive test) --- most important
+Negative Predictive Value: P(no Disease | negative test)
+Accuracy: P(correct outcome)
 
 
 
