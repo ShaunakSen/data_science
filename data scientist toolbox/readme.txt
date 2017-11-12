@@ -194,6 +194,26 @@ Negative Predictive Value: P(no Disease | negative test)
 Accuracy: P(correct outcome)
 
 
+R Programming:
+___________________________________
+
+getwd(): get current working directory
+
+> getwd()
+[1] "C:/Users/Shaunak/Documents"
+
+In R console:
+File -> change dir -> Dekstop
+
+> getwd()
+[1] "C:/Users/Shaunak/Desktop"
+
+> dir()
+[1] "desktop.ini"            "HOUSE RENT ADVANCE.pdf"
+
+read.csv("myData.csv"): Reads a CSV file
+
+
 
 
 
