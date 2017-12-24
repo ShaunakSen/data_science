@@ -4,7 +4,7 @@ library(caTools) # for split
 
 # read the data
 
-data <- read.csv(file = "D:/Data Science/Logistic Regression/data.csv", head = TRUE, sep = ",")
+data <- read.csv(file = "F:/my_projects/data_science/Logistic Regression/data.csv", head = TRUE, sep = ",")
 head(data)
 
 # split the data
