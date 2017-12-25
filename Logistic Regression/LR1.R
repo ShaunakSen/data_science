@@ -115,6 +115,30 @@ testing_data
 
 
 table(Actualvalue = testing_data$type, PredicetedValue = res > 0.5)
+res
+
+
+
+true_positives = 0
+true_negatives = 0
+false_positives = 0
+false_negatives = 0
+
+
+for(i in 1:nrow(testing_data)){
+  actual_value = testing_data$type[i]
+  predicted_value = res[i]
+  if(actual_value == 1 && predicted_value == 1){
+    true_positives = true_positives + 1
+  } else if (actual_value == 0 && predicted_value == 0) {
+    true_negatives = true_negatives + 1
+  } else if (actual_value == 0 && predicted_value == 1){
+    false_positives = false_positives + 1
+  } else {
+    false_negatives = false_negatives + 1
+  }
+
+}
 
 
 
