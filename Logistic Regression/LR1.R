@@ -33,7 +33,7 @@ model <- glm(training_data$type~., training_data, family = "binomial")
 summary(model)
 
 
-# *** - ur moidel is 99.9% confident that the ind var is significant ti model
+# *** - ur moidel is 99.9% confident that the ind var is significant to model
 # ** - 99%
 # * - 95%
 # . - 90%
@@ -69,7 +69,7 @@ compare_models <- function(model1, model2){
   aic2 = model2$aic
   residual1 = model1$deviance
   residual2 = model2$deviance
-  cat(aic1, aic2, residual1, residual2)
+  # cat(aic1, aic2, residual1, residual2)
   
   
   diff_bw_aic = abs(aic1 - aic2)
@@ -183,9 +183,16 @@ ROCRPerf <- performance(ROCRPred, "tpr", "fpr")
 
 plot(ROCRPerf, colorize=TRUE, print.cutoffs.at = seq(0.1, by = 0.1))
 
+# acc to graph chose 0.3 as FP is less and TP is more
 
 
+res3 <- predict(model2, testing_data, type = "response")
+table(Actualvalue = testing_data$type, PredicetedValue = res3 > 0.32)
 
+# trail and error bw .3 and .4 and 
+
+# false positive dec!!
+# accuracy : 81.7%  
 
 
 
