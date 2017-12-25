@@ -123,11 +123,22 @@ true_positives = 0
 true_negatives = 0
 false_positives = 0
 false_negatives = 0
+accuracy = -1
+
 
 
 for(i in 1:nrow(testing_data)){
   actual_value = testing_data$type[i]
-  predicted_value = res[i]
+  predicted_value_actual = (res[i] < 0.5)
+  
+  if(predicted_value_actual == TRUE){
+    predicted_value = 0
+  } else {
+    predicted_value = 1
+  }
+  cat(res[i], predicted_value)
+  print("\n")
+  
   if(actual_value == 1 && predicted_value == 1){
     true_positives = true_positives + 1
   } else if (actual_value == 0 && predicted_value == 0) {
@@ -137,8 +148,12 @@ for(i in 1:nrow(testing_data)){
   } else {
     false_negatives = false_negatives + 1
   }
-
+  
+  accuracy = (true_positives + true_negatives)/(true_positives + true_negatives + false_positives + false_negatives)
 }
+
+
+
 
 
 
