@@ -1,4 +1,6 @@
 library(caTools) # for split
+library(ROCR) # for finding proper threshold
+
 
 # predict whether a patient is diabetic or not
 
@@ -153,7 +155,33 @@ for(i in 1:nrow(testing_data)){
 }
 
 
+# in our case a false negative is far more dangerous than a false positive
 
+# how to decide threshold
+
+# one way is hit and trial
+
+# Another method is the ROC curve
+
+# first put in the predicted values: predicted values should be from training data set
+
+res2 <- predict(model2, training_data, type = "response")
+
+# we have stored the predicted values for training data in res2
+
+# Define ROCRPred and ROCRPerf
+
+# ROCRPred: 2 params: predicted result set, actual result set
+ROCRPred <- prediction(res2,  training_data$type)
+
+# In ROCRPerf we pass in ROCRPred to see how good our perf is
+# we plot it against tpr and fpr
+# tpr: True Positive Rate
+# fpr : False Positive Rate
+
+ROCRPerf <- performance(ROCRPred, "tpr", "fpr")
+
+plot(ROCRPerf, colorize=TRUE, print.cutoffs.at = seq(0.1, by = 0.1))
 
 
 
