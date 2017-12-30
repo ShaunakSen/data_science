@@ -224,3 +224,6 @@ confusionMatrix(table(diabetes_prediction, diabetes_testing_data$Outcome))
 
 
 
+
+
+
