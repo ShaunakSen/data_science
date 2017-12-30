@@ -163,7 +163,7 @@ confusionMatrix(table(diabetes_prediction, diabetes_testing_data$Outcome))
 
 
 # Accuracy : 0.7888
-
+######################################################################################
 
 
 
