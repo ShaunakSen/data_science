@@ -187,7 +187,7 @@ library(caret)
 
 confusionMatrix(table(predict_data, diabetes_testing_data$Outcome))
 
-
+# --------------------------------------------------------------------------------------
 
 
 
